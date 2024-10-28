@@ -1,0 +1,33 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a; /* 深色背景 */
+}
+
+.metronome {
+    width: 100px;
+    height: 600px; /* 保持容器高度 */
+    position: relative;
+    transform: translateY(-50px); /* 向上移动50px，使其更接近视觉中心 */
+}
+
+.pendulum {
+    width: 6px; /* 减少宽度 */
+    height: 350px; /* 增加摆锤的长度 */
+    background-color: #fff; /* 摆锤颜色为白色 */
+    position: absolute;
+    bottom: 0; /* 轴心位置在底部 */
+    left: 50%;
+    transform-origin: bottom center; /* 保持旋转轴心在底部 */
+    animation: swing 60s infinite; /* 将一个摆动周期增加到60秒 */
+}
+
+@keyframes swing {
+    0% { transform: translateX(-50%) rotate(-60deg); }
+    50% { transform: translateX(-50%) rotate(60deg); }
+    100% { transform: translateX(-50%) rotate(-60deg); }
+}
